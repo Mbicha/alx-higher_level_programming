@@ -1,0 +1,15 @@
+#Task 0
+generate random number and store in 'number'
+check IF number is POSITIVE or NEGATIVE
+IF number is +VE:
+	print (number is +VE)
+elif number is -VE:
+	print(number is -VE)
+elif number == 0:
+	print(number is zero)
+	
+
+#Task 1
+convert number to string then extract last_digit
+convert last_digit back to int
+
