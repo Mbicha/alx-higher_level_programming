@@ -13,8 +13,6 @@ elif number == 0:
 convert number to string then extract last_digit
 convert last_digit back to int
 
-#Task 2
-ASCII values lower (97-123)
-for i range(97, 123)
-	print(alph(i), end = ""):
+isLower:
+
 
