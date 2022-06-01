@@ -1,4 +1,2 @@
-#!/usr/bin/python3
-import os
-my_code = os.environ.get('PYCODE')
-my_code
+#!/bin/bash
+python3 -c "$PYCODE"
