@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""define class Square"""
+"""Defines a class Square"""
 
 
 class Square:
@@ -14,16 +14,21 @@ class Square:
         Args:
             size (int): size of a side of the square
 
-        Returns: None
+        Returns:
+            None
         """
         if type(size) is not int:
-            raise TypeError("size must be an integer")        
+            raise TypeError("size must be an integer")
         else:
             if size < 0:
                 raise ValueError("size must be >= 0")
             else:
                 self.__size = size
 
-        """Method to calculate current square area"""
-        def area(self):
-            return self.__size * self.__size
+    def area(self):
+        """calculates the square's area
+
+        Returns:
+            The area of the square
+        """
+        return (self.__size) ** 2
