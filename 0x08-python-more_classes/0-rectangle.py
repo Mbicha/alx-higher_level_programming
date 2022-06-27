@@ -1,11 +1,10 @@
 #!/usr/bin/python3
-
 """
-Define empty class Reactangle
+Define empty class Rectangle
 """
 
 
 class Reactangle:
-    """EMPTY CLASS RECTANGLE"""
+    """Empty class Rectangle"""
     pass
     
