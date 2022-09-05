@@ -1,5 +1,4 @@
 #!/usr/bin/node
-'use strict'
 let myArg = process.argv[2];
 let myString = "C is fun";
 if(isNaN(myArg)){

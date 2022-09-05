@@ -1,5 +1,4 @@
 #!/usr/bin/node
-'use strict'
 let myArgs = process.argv;
 function add(a, b){
     return (a + b);

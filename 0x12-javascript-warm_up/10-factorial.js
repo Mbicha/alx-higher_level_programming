@@ -1,5 +1,4 @@
 #!/usr/bin/node
-'use strict'
 let myArg = process.argv[2];
 function factorial (myArg) {
     if (isNaN(myArg) || myArg === 1) {

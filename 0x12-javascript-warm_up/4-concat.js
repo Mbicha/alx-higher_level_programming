@@ -1,5 +1,4 @@
 #!/usr/bin/node
-'use strict'
 let str1 = process.argv[2];
 let str2 = process.argv[3];
 if (str1 === undefined){

@@ -1,5 +1,4 @@
 #!/usr/bin/node
-'use strict'
 let myArgsLen = process.argv.lenth;
 if (myArgsLen === 2)
 {
