@@ -10,20 +10,13 @@ import MySQLdb
 from sys import argv
 
 if __name__ == "__main__":
-    conn = MySQLdb.connect(
-        host='localhost',
-        user=argv[1],
-        passwd=argv[2],
-        db=argv[3],
-        port=3306
-    )
-    name_value = argv[4]
-    sql = (
-        "SELECT * FROM states WHERE name LIKE %s ORDER BY \
-            id ASC".format(name_value)
-    )
-    cur = conn.cursor()
-    cur.execute(sql, (name_value,))
-    print(cur.fetchone())
-    cur.close()
-    conn.close()
+    db = MySQLdb.connect(host="localhost", port=3306, user=argv[1],
+                         passwd=argv[2], db=argv[3], charset="utf8")
+    cursor = db.cursor()
+    cursor.execute("SELECT * FROM states WHERE name LIKE %s ORDER BY id ASC",
+                   (argv[4],))
+    states = cursor.fetchall()
+    for state in states:
+        print(state)
+    cursor.close()
+    db.close()

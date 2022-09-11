@@ -21,6 +21,7 @@ if __name__ == "__main__":
     cur.execute(sql)
     states = cur.fetchall()
     for state in states:
-        print(state)
+        if state[1][0] == 'N':
+            print(state)
     cur.close()
     conn.close()

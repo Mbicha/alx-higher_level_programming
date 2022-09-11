@@ -1,27 +1,21 @@
 #!/usr/bin/python3
 """
-This script takes an argument and display all values of in the
-states table matching the name argument passed
+python script that lists all states from the database hbtn_0e_0_usa with
+a given name
 """
-
 
 import MySQLdb
 from sys import argv
 
 if __name__ == "__main__":
-    conn = MySQLdb.connect(
-        host='localhost',
-        user=argv[1],
-        passwd=argv[2],
-        db=argv[3],
-        port=3306
-    )
-    name_value = argv[4]
-    sql = (
-        "SELECT * FROM states WHERE name=%s ORDER BY id ASC".format(name_value)
-    )
-    cur = conn.cursor()
-    cur.execute(sql, (name_value,))
-    print(cur.fetchone())
-    cur.close()
-    conn.close()
+    db = MySQLdb.connect(host="localhost", port=3306, user=argv[1],
+                         passwd=argv[2], db=argv[3], charset="utf8")
+    cursor = db.cursor()
+    cursor.execute("SELECT * FROM states WHERE name LIKE '{:s}' ORDER BY \
+    id ASC".format(argv[4]))
+    rows = cursor.fetchall()
+    for row in rows:
+        if row[1] == argv[4]:
+            print(row)
+    cursor.close()
+    db.close()
