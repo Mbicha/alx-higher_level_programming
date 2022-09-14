@@ -2,6 +2,14 @@
 """This module defines a class to manage file storage for hbnb clone"""
 import json
 
+from ..amenity import Amenity
+from ..base_model import BaseModel
+from ..city import City
+from ..place import Place
+from ..review import Review
+from ..state import State
+from ..user import User
+
 
 class FileStorage:
     """This class manages storage of hbnb models in JSON format"""
@@ -45,6 +53,8 @@ class FileStorage:
             key = "{}.{}".format(type(obj).__name__, obj.id)
             if (key, obj) in self.__objects.items():
                 self.__objects.pop(key, None)
+            else:
+                return
         self.save()
 
         classes = {
